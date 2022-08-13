@@ -24,13 +24,27 @@ function getCatInfo() {
     let ownerPhone = getData(".ownerPhone");
     let ownerEmail = getData(".ownerEmail");
     let catBreed = getData(".catBreed");
-    let foodType = getData(".foodType");
+    let foodType = getCheckedFoodBoxes();
+    let catGender = document.querySelectorAll(".catGender");
+    if (catGender[0].checked) {
+        catGender = "Самец";
+    }
+    else if (catGender[1].checked) {
+        catGender = "Самка";
+    }
+    let addInfo = getData(".additional-info");
+    let catPic = getData(".catPic");
 
-    let catSummary = new Cat(catName, ownerName, ownerPhone, ownerEmail, catBreed, foodType);
+    let catSummary = new Cat(catName, ownerName, ownerPhone, ownerEmail, catBreed, foodType, catGender, addInfo, catPic);
     console.log(catSummary);
 
     function getData(input) {
         let valueReceived = document.querySelector(input).value;
         return valueReceived;
+    }
+    function getCheckedFoodBoxes() {
+        let foodType = document.querySelectorAll(".food:checked");
+        let checkedValues = Array.from(foodType).map(item => item.value);
+        return checkedValues;
     }
 }

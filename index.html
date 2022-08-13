@@ -95,11 +95,11 @@
         <div class="gender">
             <div>Выберите пол:</div>
             <div>
-                <input type="radio" name="sex" id="male" value="male" required />
+                <input class="catGender" type="radio" name="sex" id="male" value="male" required />
                 <label for="male">Самец</label>
             </div>
             <div>
-                <input type="radio" name="sex" id="female" value="female" required />
+                <input class="catGender" type="radio" name="sex" id="female" value="female" required />
                 <label for="female">Самка</label>
             </div>
         </div>
@@ -111,7 +111,8 @@
             </div>
         </div>
         <div class="photo">
-            Здесь можно приложить фотографию питомца <input type="file" name="pic" />
+            <label for="image">Здесь можно приложить фотографию питомца</label>
+            <input class="catPic" type="file" accept=".jpg, .jpeg, .png" name="pic" id="image" />
         </div>
         <div>
             <button type="submit">Сохранить</button>
